@@ -15,7 +15,7 @@ const Header = () => {
             <div className="flex items-center justify-between py-3 md:block">
               <Link to="/" className="flex items-center">
                 <img src={logo} alt="" className="w-1/5" />
-                <h2 className="text-3xl font-bold">Brighters</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Brighters</h2>
               </Link>
               <div className="md:hidden">
                 <button
@@ -62,16 +62,16 @@ const Header = () => {
               }`}
             >
               <ul className="text-lg font-medium items-center justify-center space-y-8 md:flex md:space-x-8 md:space-y-0">
-                <li className="text-gray-700 hover:text-purple-700">
+                <li className="text-gray-700 hover:text-sky-500">
                   <Link to="/home">Home</Link>
                 </li>
-                <li className="text-gray-700 hover:text-purple-700">
+                <li className="text-gray-700 hover:text-sky-500">
                   <Link to="/courses">Courses</Link>
                 </li>
-                <li className="text-gray-700 hover:text-purple-700">
+                <li className="text-gray-700 hover:text-sky-500">
                   <Link to="/faq">Faq</Link>
                 </li>
-                <li className="text-gray-700 hover:text-purple-700">
+                <li className="text-gray-700 hover:text-sky-500">
                   <Link to="/blog">Blog</Link>
                 </li>
                 <li
@@ -80,7 +80,7 @@ const Header = () => {
                 >
                   {theme ? <RiSunLine /> : <RiMoonClearLine />}
                 </li>
-                <li className="py-2 px-4 rounded bg-black text-white inline-block -ml-1 md:ml-0">
+                <li className="py-2 px-4 rounded bg-black text-white inline-block -ml-1 md:ml-0 hover:text-sky-400">
                   <Link to="/login">
                     <button>Login</button>
                   </Link>
