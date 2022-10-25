@@ -16,7 +16,11 @@ export const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "home", element: <Home /> },
-      { path: "courses", element: <Courses /> },
+      {
+        path: "courses",
+        element: <Courses />,
+        loader: () => fetch("https://brighters-server.vercel.app/courses"),
+      },
       { path: "faq", element: <Faq /> },
       { path: "blog", element: <Blog /> },
       { path: "login", element: <Login /> },

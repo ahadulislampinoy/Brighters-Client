@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 const ErrorPage = () => {
   return (
     <div>
-      <div class="grid h-screen place-content-center bg-[#f3f4f9]">
-        <div class="text-center">
+      <div className="grid h-screen place-content-center bg-[#f3f4f9]">
+        <div className="text-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1024 768"
-            class="mx-auto h-56 w-auto text-black sm:h-64"
+            className="mx-auto h-56 w-auto text-black sm:h-64"
           >
             <g fill="none" fill-rule="evenodd">
               <g fill="#000">
@@ -26,15 +26,15 @@ const ErrorPage = () => {
             </g>
           </svg>
 
-          <h1 class="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="mt-6 text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Lost!
           </h1>
 
-          <p class="mt-4 text-gray-500">We couldn't find this page</p>
+          <p className="mt-4 text-gray-500">We couldn't find this page</p>
           <Link to="/">
-            <button class="flex items-center justify-center px-2 py-1 text-white  bg-gray-900 rounded mx-auto mt-3">
+            <button className="flex items-center justify-center px-2 py-1 text-white  bg-gray-900 rounded mx-auto mt-3">
               <RiHome3Line />
-              <span class="mx-1">Home</span>
+              <span className="mx-1">Home</span>
             </button>
           </Link>
         </div>

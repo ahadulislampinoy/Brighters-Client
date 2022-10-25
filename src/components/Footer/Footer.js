@@ -2,11 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class="flex justify-between items-center pt-10 pb-5 px-10 footer-shadow">
-      <p class="text-center text-gray-800 font-medium">
+    <footer className="flex flex-col sm:flex-row justify-between items-center py-10 px-10">
+      <p className="text-center text-gray-800 font-medium pb-4 sm:pb-0">
         &copy; 2022 Brighters. All rights reservered.
       </p>
-      <div class="flex justify-center space-x-5">
+      <div className="flex justify-center space-x-5">
         <a
           href="https://facebook.com"
           target="_blank"
