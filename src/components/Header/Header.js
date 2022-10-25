@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { RiMoonClearLine, RiSunLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import "./Header.css";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
@@ -63,27 +64,34 @@ const Header = () => {
             >
               <ul className="text-lg font-medium items-center justify-center space-y-8 md:flex md:space-x-8 md:space-y-0">
                 <li className="text-gray-700 hover:text-sky-500">
-                  <Link to="/home">Home</Link>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? "active" : undefined
+                    }
+                    to="/home"
+                  >
+                    Home
+                  </NavLink>
                 </li>
                 <li className="text-gray-700 hover:text-sky-500">
-                  <Link to="/courses">Courses</Link>
+                  <NavLink to="/courses">Courses</NavLink>
                 </li>
                 <li className="text-gray-700 hover:text-sky-500">
-                  <Link to="/faq">Faq</Link>
+                  <NavLink to="/faq">Faq</NavLink>
                 </li>
                 <li className="text-gray-700 hover:text-sky-500">
-                  <Link to="/blog">Blog</Link>
+                  <NavLink to="/blog">Blog</NavLink>
                 </li>
                 <li
                   onClick={() => setTheme(!theme)}
-                  className="text-gray-700 cursor-pointer text-xl"
+                  className="text-gray-700 cursor-pointer text-xl hover:text-sky-600"
                 >
                   {theme ? <RiSunLine /> : <RiMoonClearLine />}
                 </li>
                 <li className="py-2 px-4 rounded bg-black text-white inline-block -ml-1 md:ml-0 hover:text-sky-400">
-                  <Link to="/login">
+                  <NavLink to="/login">
                     <button>Login</button>
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>
