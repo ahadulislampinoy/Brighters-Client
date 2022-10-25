@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { RiMoonClearLine, RiSunLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
+  const [theme, setTheme] = useState(true);
 
   return (
     <div>
       <nav className="w-full shadow">
-        <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <div className="justify-between px-4 pb-2 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:block">
               <Link to="/" className="flex items-center">
@@ -60,19 +62,25 @@ const Header = () => {
               }`}
             >
               <ul className="text-lg font-medium items-center justify-center space-y-8 md:flex md:space-x-8 md:space-y-0">
-                <li className="text-gray-600 hover:text-purple-700">
+                <li className="text-gray-700 hover:text-purple-700">
                   <Link to="/home">Home</Link>
                 </li>
-                <li className="text-gray-600 hover:text-purple-700">
+                <li className="text-gray-700 hover:text-purple-700">
                   <Link to="/courses">Courses</Link>
                 </li>
-                <li className="text-gray-600 hover:text-purple-700">
+                <li className="text-gray-700 hover:text-purple-700">
                   <Link to="/faq">Faq</Link>
                 </li>
-                <li className="text-gray-600 hover:text-purple-700">
+                <li className="text-gray-700 hover:text-purple-700">
                   <Link to="/blog">Blog</Link>
                 </li>
-                <li className="py-2 px-4 rounded bg-black text-white hover:text-purple-400">
+                <li
+                  onClick={() => setTheme(!theme)}
+                  className="text-gray-700 cursor-pointer text-xl"
+                >
+                  {theme ? <RiSunLine /> : <RiMoonClearLine />}
+                </li>
+                <li className="py-2 px-4 rounded bg-black text-white inline-block -ml-1 md:ml-0">
                   <Link to="/login">
                     <button>Login</button>
                   </Link>
