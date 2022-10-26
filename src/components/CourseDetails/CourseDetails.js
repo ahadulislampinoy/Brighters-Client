@@ -1,16 +1,45 @@
-import React from "react";
+import html2canvas from "html2canvas";
+import { jsPDF } from "jspdf";
+import React, { useRef } from "react";
 import { HiArrowTrendingUp } from "react-icons/hi2";
+import { RiFileDownloadLine } from "react-icons/ri";
 import { Link, useLoaderData } from "react-router-dom";
 
 const CourseDetails = () => {
   const course = useLoaderData();
   const { _id, course_title, price, image_url, details, learn } = course;
 
+  // Pdf downloader functionality start
+  const printRef = useRef();
+  const handleDownloadPdf = async () => {
+    const element = printRef.current;
+    const canvas = await html2canvas(element);
+    const data = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF();
+    const imgProperties = pdf.getImageProperties(data);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
+
+    pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
+    pdf.save("Course.pdf");
+  };
+  // Pdf downloader functionality end
+
   return (
     <div className="bg-[#f3f4f9]">
-      <div className="relative max-w-screen-xl mx-auto p-8 sm:p-16 md:px-6 lg:px-8">
+      <div
+        ref={printRef}
+        className="relative max-w-screen-xl mx-auto p-8 sm:p-16 md:px-6 lg:px-8"
+      >
         <div className="pricing-box mx-auto rounded-lg shadow-md overflow-hidden lg:max-w-none lg:flex">
-          <div className="bg-white px-6 py-8 lg:flex-shrink-1 lg:p-12">
+          <div className="relative bg-white px-6 py-12 md:px-8 lg:flex-shrink-1 lg:p-12">
+            <span
+              onClick={handleDownloadPdf}
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 cursor-pointer text-3xl text-gray-900 hover:text-sky-600"
+            >
+              <RiFileDownloadLine />
+            </span>
             <h3 className="text-2xl leading-8 font-extrabold text-gray-900 sm:text-3xl sm:leading-9">
               {course_title}
             </h3>

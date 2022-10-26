@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
@@ -19,7 +20,7 @@ const Login = () => {
       .then((userCredential) => {
         setError("");
         navigate(from, { replace: true });
-        console.log("Login Succeed", userCredential.user);
+        toast.success("Login Succeed!");
       })
       .catch((error) => {
         setError(error.message);
@@ -32,7 +33,7 @@ const Login = () => {
       .then((result) => {
         setError("");
         navigate(from, { replace: true });
-        console.log("Google Signin Succeed", result.user);
+        toast.success("Google signin succeed!");
       })
       .catch((error) => {
         setError(error.message);
@@ -45,7 +46,7 @@ const Login = () => {
       .then((result) => {
         setError("");
         navigate(from, { replace: true });
-        console.log("Github Signin Succeed", result.user);
+        toast.success("Github signin succeed!");
       })
       .catch((error) => {
         setError(error.message);

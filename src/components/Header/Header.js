@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { RiMoonClearLine, RiSunLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import userImg from "../../assets/user.png";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import "./Header.css";
 
@@ -15,7 +16,7 @@ const Header = () => {
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
-        console.log("Signout Successful.");
+        toast.success("Signout successful.");
       })
       .catch((error) => {
         toast.error(error.message);
@@ -25,7 +26,7 @@ const Header = () => {
   return (
     <div>
       <nav className="w-full shadow">
-        <div className="justify-between px-4 pb-2 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <div className="justify-between px-4 pb-2 lg:pt-0 mx-auto md:items-center md:flex">
           <div>
             <div className="flex items-center justify-between py-3 md:block">
               <Link to="/" className="flex items-center">
@@ -72,8 +73,8 @@ const Header = () => {
           </div>
           <div>
             <div
-              className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-                navbar ? "block" : "hidden"
+              className={`flex md:flex-row justify-between items-end md:items-center pb-3 mt-8 md:pb-0 md:mt-0 ${
+                navbar ? "hidden" : "block"
               }`}
             >
               <ul className="text-lg font-medium items-center justify-center space-y-8 md:flex md:space-x-8 md:space-y-0">
@@ -112,6 +113,25 @@ const Header = () => {
                   )}
                 </li>
               </ul>
+              {user?.uid ? (
+                <>
+                  <p className="border h-8 border-gray-600 ml-4 mr-4 md:mr-0 hidden md:block"></p>
+                  <div class="flex-row justify-center ml-4 items-center text-center">
+                    <div class="flex-shrink-0">
+                      <div class="block relative">
+                        <img
+                          alt="profile"
+                          src={user.photoURL ? user.photoURL : userImg}
+                          class="mx-auto object-cover rounded-full h-12 w-12"
+                        />
+                      </div>
+                    </div>
+                    <span class="text-gray-900 text-base font-medium mt-2">
+                      {user.displayName ? user.displayName : "Unknown"}
+                    </span>
+                  </div>
+                </>
+              ) : undefined}
             </div>
           </div>
         </div>

@@ -6,24 +6,23 @@ const Course = () => {
   const courses = useContext(CoursesContext);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ]">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {courses.map((course) => (
         <Link key={course._id} to={`/courses/${course._id}`}>
           <div
             key={course._id}
-            className="block rounded-lg p-4 bg-white shadow shadow-indigo-100 transition-transform duration-500 hover:scale-105"
+            className="block rounded-lg p-4 bg-white shadow shadow-indigo-100 transition-all duration-500 hover:scale-[1.03]"
           >
             <img
               alt="Home"
               src={course.image_url}
               className="w-full h-56 rounded-md object-cover"
-              // className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-80"
             />
 
             <div className="mt-3">
               <div>
                 <p className="font-medium">{course.course_title}</p>
-                <p>{course.details.slice(0, 100) + "..."}</p>
+                <p>{course.details.slice(0, 95) + "..."}</p>
               </div>
               <div className="flex justify-between items-center text-gray-800 font-medium mt-4">
                 <p className="text-xl">£{course.price}</p>

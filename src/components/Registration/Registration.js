@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Registration = () => {
@@ -7,8 +8,6 @@ const Registration = () => {
   const { createUser, updateUserProfile, googleSignIn, githubSignIn } =
     useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,13 +23,13 @@ const Registration = () => {
         updateUserProfile(fullname, photo)
           .then(() => {
             setError("");
-            navigate(from, { replace: true });
+            navigate("/");
             console.log("Profile Update Succeed");
           })
           .catch((error) => {
             setError(error.message);
           });
-        console.log("New User Created", userCredential.user);
+        toast.success("Account created successfully!");
       })
       .catch((error) => {
         setError(error.message);
@@ -42,8 +41,8 @@ const Registration = () => {
     googleSignIn()
       .then((result) => {
         setError("");
-        navigate(from, { replace: true });
-        console.log("Google Signin Succeed", result.user);
+        navigate("/");
+        toast.success("Google signin succeed!");
       })
       .catch((error) => {
         setError(error.message);
@@ -55,8 +54,8 @@ const Registration = () => {
     githubSignIn()
       .then((result) => {
         setError("");
-        navigate(from, { replace: true });
-        console.log("Github Signin Succeed", result.user);
+        navigate("/");
+        toast.success("Github signin succeed!");
       })
       .catch((error) => {
         setError(error.message);

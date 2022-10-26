@@ -8,9 +8,9 @@ const CheckOut = () => {
   const orderToast = () =>
     toast.success("Your order has been placed, thank you!");
   return (
-    <div className="bg-[#f3f4f9] flex justify-center items-center p-8 sm:p-16 md:px-6 lg:px-8">
+    <div className="bg-[#f3f4f9] flex justify-center items-center p-6 sm:p-16 md:px-6 lg:px-8">
       <div
-        className="block w-screen max-w-sm border border-black bg-white p-10 sm:px-12"
+        className="block w-screen max-w-sm border border-black bg-white p-6 sm:p-10 sm:px-12"
         aria-modal="true"
         aria-label="Item added to your cart"
         role="dialog"
@@ -37,14 +37,14 @@ const CheckOut = () => {
           </h2>
         </div>
 
-        <div className="flex items-start pt-8 pb-12">
+        <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row items-start pt-8 pb-12">
           <img
             alt="Course thumbnail"
             src={image_url}
             className="h-32 w-32 rounded-lg object-cover"
           />
 
-          <div className="ml-4">
+          <div className="ml-0 sm:ml-4">
             <h3 className="text-base">{course_title}</h3>
 
             <dl className="mt-1 space-y-1 text-sm text-gray-500">

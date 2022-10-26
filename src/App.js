@@ -5,7 +5,12 @@ import { router } from "./routes/Routes";
 function App() {
   return (
     <div>
-      <Toaster />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          duration: 2500,
+        }}
+      />
       <RouterProvider router={router} />
     </div>
   );
