@@ -1,13 +1,14 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { HiArrowTrendingUp } from "react-icons/hi2";
+import { Link, useLoaderData } from "react-router-dom";
 
 const CourseDetails = () => {
   const course = useLoaderData();
   const { course_title, price, image_url, details, learn } = course;
   return (
     <div className="bg-[#f3f4f9]">
-      <div className="relative max-w-screen-xl mx-auto p-8 sm:p-16 sm:px-6 lg:px-8">
-        <div className="pricing-box max-w-lg mx-auto rounded-lg shadow-md overflow-hidden lg:max-w-none lg:flex">
+      <div className="relative max-w-screen-xl mx-auto p-8 sm:p-16 md:px-6 lg:px-8">
+        <div className="pricing-box mx-auto rounded-lg shadow-md overflow-hidden lg:max-w-none lg:flex">
           <div className="bg-white px-6 py-8 lg:flex-shrink-1 lg:p-12">
             <h3 className="text-2xl leading-8 font-extrabold text-gray-900 sm:text-3xl sm:leading-9">
               {course_title}
@@ -44,26 +45,28 @@ const CourseDetails = () => {
               </ul>
             </div>
           </div>
-          <div className="selection:file:py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12 relative bg-[url(https://images.unsplash.com/photo-1550291652-6ea9114a47b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80)] bg-cover bg-center bg-no-repeat">
-            <div className="mt-4 flex items-center justify-center text-5xl leading-none font-extrabold text-gray-900">
-              <span>$0</span>
-            </div>
-            <p className="mt-4 text-sm leading-5">
-              <span className="block font-medium text-gray-500">
-                Card payments:
-              </span>
-              <span className=" inline-block font-medium text-gray-500">
-                2.9% + 20p per transaction
-              </span>
-            </p>
-            <div className="mt-6">
-              <div className="rounded-md shadow">
-                <button
-                  type="button"
-                  className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+          <div
+            style={{ backgroundImage: `url(${image_url})` }}
+            className="bg-cover bg-center bg-no-repeat"
+          >
+            <div className="text-center relative lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:py-12 lg:px-16 px-6 py-10 backdrop-blur-sm  backdrop-brightness-75 h-full">
+              <div className="flex items-center justify-center text-5xl leading-none font-bold text-gray-50">
+                <span>£{price}</span>
+              </div>
+              <p className="mt-4 text-lg leading-6 text-gray-50">
+                <span className="block font-medium">Card payments:</span>
+                <span className=" inline-block font-medium ">
+                  2.9% + 10p per transaction
+                </span>
+              </p>
+              <div className="mt-6">
+                <Link
+                  class="inline-block px-4 py-2 font-semibold rounded bg-gradient-to-r from-indigo-600 via-sky-500 to-gray-700 text-white active:text-opacity-75"
+                  to="/download"
                 >
-                  Create your store
-                </button>
+                  Get Premium Access
+                  <HiArrowTrendingUp className="inline-block ml-1 w-5 h-5" />
+                </Link>
               </div>
             </div>
           </div>
