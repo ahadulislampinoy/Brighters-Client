@@ -1,15 +1,14 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CoursesContext } from "../Courses/Courses";
 
 const Course = () => {
   const courses = useContext(CoursesContext);
-  const [ratings, setRatings] = useState();
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ]">
       {courses.map((course) => (
-        <Link to={`/courses/${course._id}`}>
+        <Link key={course._id} to={`/courses/${course._id}`}>
           <div
             key={course._id}
             className="block rounded-lg p-4 bg-white shadow shadow-indigo-100 transition-transform duration-500 hover:scale-105"
