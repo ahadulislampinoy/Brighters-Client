@@ -2,6 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Registration = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const fullname = e.target.fullname.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(fullname, photo, email, password);
+  };
+
   return (
     <div>
       <div className="flex justify-center p-6 md:p-16 bg-[#f3f4f9]">
@@ -10,12 +19,13 @@ const Registration = () => {
             Sign Up
           </h1>
           <form
-            novalidate=""
+            onSubmit={handleSubmit}
+            noValidate=""
             action=""
             className="space-y-6 ng-untouched ng-pristine ng-valid"
           >
             <div className="space-y-1">
-              <label for="fullname" className="block text-gray-600">
+              <label htmlFor="fullname" className="block text-gray-600">
                 Full name
               </label>
               <input
@@ -23,11 +33,12 @@ const Registration = () => {
                 name="fullname"
                 id="fullname"
                 placeholder="Full name"
+                required
                 className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600"
               />
             </div>
             <div className="space-y-1">
-              <label for="photo" className="block text-gray-600">
+              <label htmlFor="photo" className="block text-gray-600">
                 Photo URL
               </label>
               <input
@@ -35,11 +46,12 @@ const Registration = () => {
                 name="photo"
                 id="photo"
                 placeholder="Photo URL"
+                required
                 className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600"
               />
             </div>
             <div className="space-y-1">
-              <label for="email" className="block text-gray-600">
+              <label htmlFor="email" className="block text-gray-600">
                 Email
               </label>
               <input
@@ -47,11 +59,12 @@ const Registration = () => {
                 name="email"
                 id="email"
                 placeholder="Email"
+                required
                 className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600"
               />
             </div>
             <div className="space-y-1">
-              <label for="password" className="block text-gray-600">
+              <label htmlFor="password" className="block text-gray-600">
                 Password
               </label>
               <input
@@ -59,6 +72,7 @@ const Registration = () => {
                 name="password"
                 id="password"
                 placeholder="Password"
+                required
                 className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600"
               />
             </div>
