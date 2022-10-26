@@ -61,7 +61,7 @@ const CourseDetails = () => {
               </p>
               <div className="mt-6">
                 <Link
-                  class="inline-block px-4 py-2 font-semibold rounded bg-gradient-to-r from-indigo-600 via-sky-500 to-gray-700 text-white active:text-opacity-75"
+                  class="inline-block px-4 py-3 font-semibold rounded bg-gradient-to-r from-indigo-600 via-sky-500 to-gray-700 text-white active:text-opacity-75"
                   to="/download"
                 >
                   Get Premium Access
