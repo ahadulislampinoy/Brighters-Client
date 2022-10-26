@@ -9,6 +9,7 @@ import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
 import Registration from "../components/Registration/Registration";
 import Root from "../layout/Root";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -31,7 +32,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/checkout/:id",
-        element: <CheckOut />,
+        element: (
+          <PrivateRoute>
+            <CheckOut />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`https://brighters-server.vercel.app/courses/${params.id}`),
       },

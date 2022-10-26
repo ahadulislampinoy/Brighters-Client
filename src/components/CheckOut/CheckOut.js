@@ -5,7 +5,8 @@ import { Link, useLoaderData } from "react-router-dom";
 const CheckOut = () => {
   const course = useLoaderData();
   const { course_title, image_url } = course;
-  const notify = () => toast.success("Your order has been placed, thank you!");
+  const orderToast = () =>
+    toast.success("Your order has been placed, thank you!");
   return (
     <div className="bg-[#f3f4f9] flex justify-center items-center p-8 sm:p-16 md:px-6 lg:px-8">
       <div
@@ -57,7 +58,7 @@ const CheckOut = () => {
 
         <div className="space-y-4 text-center">
           <button
-            onClick={notify}
+            onClick={orderToast}
             className="block w-full rounded-lg bg-gray-900 p-3 text-sm text-stone-100 transition-colors duration-300 hover:bg-gray-600"
           >
             Checkout

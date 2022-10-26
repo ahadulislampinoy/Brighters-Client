@@ -1,12 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
 import { RiMoonClearLine, RiSunLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import "./Header.css";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
   const [theme, setTheme] = useState(true);
+  const { user, signOutUser } = useContext(AuthContext);
+
+  // Sign out user
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        console.log("Signout Successful.");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <div>
@@ -89,9 +103,13 @@ const Header = () => {
                   {theme ? <RiSunLine /> : <RiMoonClearLine />}
                 </li>
                 <li className="py-2 px-4 rounded bg-gray-900 text-white inline-block -ml-1 md:ml-0 hover:text-sky-400">
-                  <NavLink to="/login">
-                    <button>Login</button>
-                  </NavLink>
+                  {user?.uid ? (
+                    <button onClick={handleSignOut}>Logout</button>
+                  ) : (
+                    <NavLink to="/login">
+                      <button>Login</button>
+                    </NavLink>
+                  )}
                 </li>
               </ul>
             </div>

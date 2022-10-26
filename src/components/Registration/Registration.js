@@ -1,15 +1,14 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Registration = () => {
-  const {
-    createUser,
-    updateUserProfile,
-    signInUser,
-    googleSignIn,
-    githubSignIn,
-  } = useContext(AuthContext);
+  const [error, setError] = useState();
+  const { createUser, updateUserProfile, googleSignIn, githubSignIn } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,10 +16,51 @@ const Registration = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+
     // Create user
     createUser(email, password)
-      .then((result) => {})
-      .catch((err) => {});
+      .then((userCredential) => {
+        // Update user profile
+        updateUserProfile(fullname, photo)
+          .then(() => {
+            setError("");
+            navigate(from, { replace: true });
+            console.log("Profile Update Succeed");
+          })
+          .catch((error) => {
+            setError(error.message);
+          });
+        console.log("New User Created", userCredential.user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  // Google sign in
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        setError("");
+        navigate(from, { replace: true });
+        console.log("Google Signin Succeed", result.user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  // Github sign in
+  const handleGithubSignIn = () => {
+    githubSignIn()
+      .then((result) => {
+        setError("");
+        navigate(from, { replace: true });
+        console.log("Github Signin Succeed", result.user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
@@ -88,6 +128,7 @@ const Registration = () => {
                 className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-violet-600"
               />
             </div>
+            <p className="text-base text-rose-700">{error}</p>
             <button className="block w-full p-3 text-center rounded text-gray-50 bg-gray-900">
               Sign up
             </button>
@@ -98,7 +139,11 @@ const Registration = () => {
             <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
           </div>
           <div className="flex justify-center space-x-4">
-            <button aria-label="Log in with Google" className="p-3 rounded-sm">
+            <button
+              onClick={handleGoogleSignIn}
+              aria-label="Log in with Google"
+              className="p-3 rounded-sm"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
@@ -108,7 +153,11 @@ const Registration = () => {
               </svg>
             </button>
 
-            <button aria-label="Log in with GitHub" className="p-3 rounded-sm">
+            <button
+              onClick={handleGithubSignIn}
+              aria-label="Log in with GitHub"
+              className="p-3 rounded-sm"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"

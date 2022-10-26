@@ -5,6 +5,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const CourseDetails = () => {
   const course = useLoaderData();
   const { _id, course_title, price, image_url, details, learn } = course;
+
   return (
     <div className="bg-[#f3f4f9]">
       <div className="relative max-w-screen-xl mx-auto p-8 sm:p-16 md:px-6 lg:px-8">
