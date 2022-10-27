@@ -8,7 +8,7 @@ Hosted in Firebase -> [Brighters](https://brighters.web.app/)
 
 ## Features
 
-- Purchase different learning courses
+- Can purchase different courses
 - Google, Github & Email Authentication
 - Download course details as Pdf
 - Light & Dark theme toggle
