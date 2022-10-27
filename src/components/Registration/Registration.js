@@ -29,7 +29,7 @@ const Registration = () => {
           .then(() => {
             setError("");
             navigate("/");
-            // window.location.reload();
+            window.location.reload();
             console.log("Profile Update Succeed");
           })
           .catch((error) => {
