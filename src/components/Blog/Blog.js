@@ -7,7 +7,7 @@ import reactRouterImgImg from "../../assets/react-router.png";
 const Blog = () => {
   return (
     <div>
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 p-10 bg-gray-100">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 sm:p-10 bg-gray-100">
         <article className="bg-white rounded-2xl shadow-sm relative">
           <img
             className="rounded-t-2xl h-60 w-full object-contain"

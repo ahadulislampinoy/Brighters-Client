@@ -37,16 +37,6 @@ const Footer = () => {
             alt=""
           />
         </a>
-        <a
-          href="https://messenger.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://img.icons8.com/fluent/30/000000/facebook-messenger--v2.png"
-            alt=""
-          />
-        </a>
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
           <img
             src="https://img.icons8.com/fluent/30/000000/twitter.png"

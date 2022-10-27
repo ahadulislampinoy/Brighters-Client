@@ -30,7 +30,7 @@ const CourseDetails = () => {
     <div className="bg-[#f3f4f9]">
       <div
         ref={printRef}
-        className="relative max-w-screen-xl mx-auto p-8 sm:p-16 md:px-6 lg:px-8"
+        className="relative max-w-screen-xl mx-auto p-8 md:px-6 lg:px-8"
       >
         <div className="pricing-box mx-auto rounded-lg shadow-md overflow-hidden lg:max-w-none lg:flex">
           <div className="relative bg-white px-6 py-12 md:px-8 lg:flex-shrink-1 lg:p-12">

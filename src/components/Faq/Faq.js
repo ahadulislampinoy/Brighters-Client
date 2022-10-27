@@ -3,7 +3,7 @@ import React from "react";
 const Faq = () => {
   return (
     <div>
-      <div className="bg-[#f3f4f9] py-20 px-4 text-gray-900">
+      <div className="bg-[#f3f4f9] py-20 px-6 text-gray-900">
         <div className="mx-auto max-w-6xl flex flex-col md:flex-row">
           <h2 className="mr-8 mb-16 w-full md:w-1/3 text-4xl font-extrabold ">
             Frequently-asked questions
