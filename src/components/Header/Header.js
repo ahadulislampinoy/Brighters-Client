@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { RiMoonClearLine, RiSunLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
+import ReactTooltip from "react-tooltip";
 import logo from "../../assets/logo.png";
 import userImg from "../../assets/user.png";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
@@ -88,7 +89,7 @@ const Header = () => {
                     <NavLink to="/courses">Courses</NavLink>
                   </li>
                   <li className="text-gray-700 hover:text-sky-500">
-                    <NavLink to="/faq">Faq</NavLink>
+                    <NavLink to="/faq">FAQ</NavLink>
                   </li>
                   <li className="text-gray-700 hover:text-sky-500">
                     <NavLink to="/blog">Blog</NavLink>
@@ -116,15 +117,16 @@ const Header = () => {
                       <div className="flex-shrink-0">
                         <div className="block relative">
                           <img
-                            alt="profile"
+                            alt="Profile"
                             src={user.photoURL ? user.photoURL : userImg}
-                            title={
+                            data-tip={
                               user?.displayName
                                 ? user?.displayName
                                 : user?.email
                             }
                             className="mx-auto object-cover rounded-full h-12 w-12"
                           />
+                          <ReactTooltip place="bottom" />
                         </div>
                       </div>
                       <span className="text-gray-900 text-sm font-medium mt-2 lg:w-6/12">
