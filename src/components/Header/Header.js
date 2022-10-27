@@ -109,7 +109,7 @@ const Header = () => {
                     )}
                   </li>
                 </ul>
-                {user?.email || user?.uid ? (
+                {user?.uid ? (
                   <>
                     <p className="border h-8 border-gray-600 mx-2 md:mr-0 hidden lg:block"></p>
                     <div className="flex md:flex-col lg:flex-row justify-start ml-2 items-center text-center">
@@ -118,7 +118,11 @@ const Header = () => {
                           <img
                             alt="profile"
                             src={user.photoURL ? user.photoURL : userImg}
-                            title={user?.displayName}
+                            title={
+                              user?.displayName
+                                ? user?.displayName
+                                : user?.email
+                            }
                             className="mx-auto object-cover rounded-full h-12 w-12"
                           />
                         </div>
