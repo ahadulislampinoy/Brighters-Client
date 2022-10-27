@@ -12,14 +12,14 @@ Hosted in Firebase -> [Brighters](https://brighters.web.app/)
 - Google, Github & Email Authentication
 - Download course details as Pdf
 - Light & Dark theme toggle
-- Easy navigation
+- Easy to navigate
 - Responsive
 
 ## Resources & Credits
 
 - Different Tailwind Components
 - [React icons](https://react-icons.github.io/react-icons/)
-- [React-hot-toastify](https://react-hot-toast.com/)
+- [React-hot-toast](https://react-hot-toast.com/)
 - [jsPDF](https://www.npmjs.com/package/jspdf)
 
 ## Tech Stack
