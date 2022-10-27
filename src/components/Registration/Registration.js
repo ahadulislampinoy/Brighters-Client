@@ -5,8 +5,13 @@ import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 
 const Registration = () => {
   const [error, setError] = useState();
-  const { createUser, updateUserProfile, googleSignIn, githubSignIn } =
-    useContext(AuthContext);
+  const {
+    createUser,
+    updateUserProfile,
+    googleSignIn,
+    githubSignIn,
+    setLoading,
+  } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -24,6 +29,7 @@ const Registration = () => {
           .then(() => {
             setError("");
             navigate("/");
+            // window.location.reload();
             console.log("Profile Update Succeed");
           })
           .catch((error) => {
@@ -33,7 +39,8 @@ const Registration = () => {
       })
       .catch((error) => {
         setError(error.message);
-      });
+      })
+      .finally(() => setLoading(false));
   };
 
   // Google sign in

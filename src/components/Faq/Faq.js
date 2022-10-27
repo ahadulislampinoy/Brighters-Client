@@ -11,45 +11,53 @@ const Faq = () => {
           <dl class="w-full md:w-2/3">
             <dt class="mb-4">
               <h3 class="text-xl font-semibold">
-                We already have ongoing projects. Will Valohai easily integrate
-                with them?
+                Is Brighters an accredited institution? Do I receive anything
+                after I complete a course?
               </h3>
             </dt>
             <dd class="mb-14">
               <p>
-                Running existing machine learning projects in Valohai is very
-                simple! Integration only requires adding a valohai.yaml
-                configuration file. Moving projects in and out of Valohai is
-                easy – the integration is only the configuration file.
+                While Brighters is not an accredited institution, we offer
+                skills-based courses taught by real-world experts in their
+                field. Every approved, paid course features a certificate of
+                completion to document your accomplishment.
+              </p>
+            </dd>
+            <dt class="mb-4">
+              <h3 class="text-xl font-semibold">How can I pay for a course?</h3>
+            </dt>
+            <dd class="mb-14">
+              <p>
+                Brighters supports several different payment methods, depending
+                on your account country and location.
               </p>
             </dd>
             <dt class="mb-4">
               <h3 class="text-xl font-semibold">
-                How do you compare to other data science platforms?
+                What if I don’t like a course I purchased?
               </h3>
             </dt>
             <dd class="mb-14">
               <p>
-                We don’t. Valohai isn’t a data science platform; it&#x27;s a
-                Machine Learning Management Platform that handles the whole ML
-                pipeline from feature extraction, to training of your model and
-                to deploying it into production in a reproducible manner. Data
-                science platforms offer hosted notebooks and AutoML solutions.
+                We want you to be satisfied, so all eligible courses purchased
+                on Brighters can be refunded within 30 days. If you are unhappy
+                with a course, you can request a refund, provided the request
+                meets the guidelines in our refund policy.
               </p>
             </dd>
             <dt class="mb-4">
               <h3 class="text-xl font-semibold">
-                Does Valohai charge for computation?
+                Will I continue to have access to the course even after I
+                complete it?
               </h3>
             </dt>
             <dd class="mb-14">
               <p>
-                Depends. Most of our customers use their own cloud and thus pay
-                for usage according to their own agreements. Valohai
-                doesn&#x27;t charge anything on top of the per-user license fee.
-                If you don&#x27;t have a cloud provider, you can use our AWS,
-                GCP and Azure accounts, and we&#x27;ll only charge you for what
-                you use.
+                Yes. You will continue to have access to the course after you
+                complete it, provided that your account’s in good standing, and
+                Brighters continues to have a license to the course. So, if you
+                wish to review specific content in the course after you finish
+                it,
               </p>
             </dd>
           </dl>
