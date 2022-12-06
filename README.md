@@ -8,7 +8,6 @@ Hosted in Firebase -> [Brighters](https://brighters.web.app/)
 
 ## Features
 
-- A React based learning platform application.
 - Users can log in with Google, Github & Email.
 - Users can purchase any courses after login, etc
 - Download course details as Pdf
@@ -27,4 +26,6 @@ Hosted in Firebase -> [Brighters](https://brighters.web.app/)
 - React
 - React Router
 - Firebase
+- Node
+- Express
 - TailwindCSS
