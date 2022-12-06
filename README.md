@@ -25,7 +25,7 @@ Hosted in Firebase -> [Brighters](https://brighters.web.app/)
 
 - React
 - React Router
-- Firebase
 - Node
 - Express
+- Firebase
 - TailwindCSS
