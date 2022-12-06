@@ -8,10 +8,10 @@ Hosted in Firebase -> [Brighters](https://brighters.web.app/)
 
 ## Features
 
-- Can purchase different courses
-- Google, Github & Email Authentication
+- A React based learning platform application.
+- Users can log in with Google, Github & Email.
+- Users can purchase any courses after login, etc
 - Download course details as Pdf
-- Light & Dark theme toggle
 - Easy to navigate
 - Responsive
 
