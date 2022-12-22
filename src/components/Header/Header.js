@@ -1,7 +1,6 @@
 import { Transition } from "@headlessui/react";
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import { RiMoonClearLine, RiSunLine } from "react-icons/ri";
 import { Link, NavLink } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
 import logo from "../../assets/logo.png";
@@ -11,7 +10,6 @@ import "./Header.css";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
-  const [theme, setTheme] = useState(true);
   const { user, signOutUser } = useContext(AuthContext);
 
   // Sign out user
@@ -94,12 +92,7 @@ const Header = () => {
                   <li className="text-gray-700 hover:text-sky-500">
                     <NavLink to="/blog">Blog</NavLink>
                   </li>
-                  <li
-                    onClick={() => setTheme(!theme)}
-                    className="text-gray-700 cursor-pointer text-xl hover:text-sky-600"
-                  >
-                    {theme ? <RiSunLine /> : <RiMoonClearLine />}
-                  </li>
+
                   <li className="py-2 px-4 rounded bg-gray-900 text-white inline-block -ml-1 md:ml-0 hover:text-sky-400">
                     {user?.uid ? (
                       <button onClick={handleSignOut}>Logout</button>
@@ -171,12 +164,7 @@ const Header = () => {
                   <li className="text-gray-700 hover:text-sky-500">
                     <NavLink to="/blog">Blog</NavLink>
                   </li>
-                  <li
-                    onClick={() => setTheme(!theme)}
-                    className="text-gray-700 cursor-pointer text-xl hover:text-sky-600"
-                  >
-                    {theme ? <RiSunLine /> : <RiMoonClearLine />}
-                  </li>
+
                   <li className="py-2 px-4 -ml-1 rounded bg-gray-900 text-white inline-block  hover:text-sky-400">
                     {user?.uid ? (
                       <button onClick={handleSignOut}>Logout</button>

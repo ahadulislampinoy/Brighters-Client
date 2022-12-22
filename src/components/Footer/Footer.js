@@ -26,17 +26,7 @@ const Footer = () => {
             src="https://img.icons8.com/fluent/30/000000/linkedin-2.png"
             alt=""
           />
-        </a>
-        <a
-          href="https://instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://img.icons8.com/fluent/30/000000/instagram-new.png"
-            alt=""
-          />
-        </a>
+        </a>       
         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
           <img
             src="https://img.icons8.com/fluent/30/000000/twitter.png"
